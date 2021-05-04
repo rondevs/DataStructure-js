@@ -1,0 +1,33 @@
+class Stack {
+    constructor(){
+        this.count = 0;
+        this.storage = [];
+    }
+
+    //add value onto the end of the stack
+    push(value){
+        this.storage[this.count]=value;
+        this.count++;
+    }
+
+    //removes value from the end of the stack
+    pop(){
+        if(this.count===0){
+            return undefined;
+        }
+
+        this.count--;
+        var result = this.storage[this.count];
+        delete this.storage[this.count]
+        return result
+    }
+
+    size(){
+        return this.count;
+    }
+
+    //shows peek value at the end of the stack
+    peek(){
+        return this.storage[this.count-1];
+    }
+}
